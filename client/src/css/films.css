@@ -1,0 +1,184 @@
+.divFilms {
+    margin: 0 auto;
+    height: 200px;
+    margin-bottom: 50px;
+
+}
+
+.divTotalfilm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+.imgFilm {
+    cursor: pointer;
+    border: solid;
+    width: 300px;
+    max-height: 390px;
+}
+
+.imgFilm:hover {filter: grayscale(80%);}
+
+.pTitleFilm{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    font-size: 50px;
+    color: black;
+}
+
+.tiFilmRo{
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+
+.pTime{
+    margin-top: 15px;
+    color: black;
+}
+
+.pPunt{
+    color: black;
+}
+
+.butFilmFun{
+    
+    text-align: center;
+    padding: 5px;
+    font-family: 'Carter One', cursive;
+}
+
+.boxFilm p{
+    text-align: center;
+    padding: 5px;
+    font-family: 'Carter One', cursive;
+}
+
+.btnFav{
+    padding: 5px;
+    margin-top: 200px;
+    background-color:rgb(10, 10, 10);
+    cursor: pointer;
+    border-radius: 140px;
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    width: 70px;
+    margin: 0 auto;
+    height: 100px;
+    border: 0;
+}
+
+
+.btnFav:hover{
+    background-color:   rgb(118, 110, 108);
+}
+
+.divReturn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 150px;
+    margin-bottom: 60px;
+    border: 0;
+}
+
+.butReturn{
+    font-family: 'Carter One', cursive;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 700px;
+    background-color: black;
+    color: white;
+    margin-top: 25px;
+    border: 0;
+}
+
+.butReturn:hover{
+    background-color:  rgb(255, 186, 96);
+    color: black;
+
+}
+
+.butReturnStart{
+    font-family: 'Carter One', cursive;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 700px;
+    background-color: black;
+    color: white;
+    margin-top: 25px;
+    border: 0;
+}
+
+.butReturnStart:hover{
+    background-color:  rgb(255, 186, 96);
+    color: black;
+}
+
+.divFilmsFavo{
+    display: flex;
+    flex-direction: column;
+}
+
+.pNameFilm{
+    margin-top: 10px;
+    border: solid 1px;
+    background-color: black;
+    color: white;
+    box-shadow: 8px 10px 10px 1px rgba(0,0,0,0.5);
+}
+
+
+.divTrailersYou{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1700px;
+    margin-top: 250px;
+    height: 180px;
+}
+
+.boxFilm{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.iframes{
+    align-items: center;
+    border-radius: 5px;
+    border: solid 2px;
+}
+
+
+.boxFilm input{
+    margin-top: 280px;
+}
+
+.pNoResults{
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.divNoResults{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Estilos para las peliculas mas vistas*/
+
+.divPagPrin{
+   
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
