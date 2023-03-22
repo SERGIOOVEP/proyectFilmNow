@@ -1,7 +1,3 @@
-body {
-    background-color: #355776;
-}
-
 
 .login {
     margin: 0 auto;
@@ -20,8 +16,23 @@ body {
     border-radius: 5px;
     background-color: #1A2A47;
     color: white;
-    border: solid 3px;
+    border: solid 3px  #355776;
     font-family: 'Carter One', cursive;
+    
+}
+
+.inputLogin2{
+    height: 60px;
+    width: 900px;
+    margin-top: 25px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #1A2A47;
+    color: white;
+    border: solid 3px  #355776;
+    font-family: 'Carter One', cursive;
+
 }
 
 ::placeholder {

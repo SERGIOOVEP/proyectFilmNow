@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 
+
 export const MostPopular = () => {
 
     const [popular, setPopular] = useState([]);
@@ -12,9 +13,8 @@ export const MostPopular = () => {
     // token cuenta lyvegama - lyvegama@gmail.com 12345678
 
     useEffect(() => {
+
         fetch(`https://imdb-api.com/en/API/MostPopularMovies/${token2}`)
-        
-            // fetch(jsonMost)
             .then((response) => response.json())
             .then((response) => {
                 setPopular(response.items);
@@ -22,36 +22,34 @@ export const MostPopular = () => {
             })
 
     }, [])
-
+   
 
 
 
     return (
 
         <div>
-        
 
+        
             <div >
 
                 <motion.div className='slider-container'>
                     <div className='menuFormation'>
-                        
+
                     </div>
+                    
                     <motion.div className='slider' drag='x'
                         dragConstraints={{ right: 0, left: -5880 }} >
 
                         {popular.length > 0 ? popular.slice(0, 40).map((film, i) => (
+                            <div key={i} >
 
-                            <motion.div className='imageCarrusel'>
-
-                                <div key={i} >
+                                <motion.div className='imageCarrusel'>
 
                                     <img src={film.image} className="imgTop" alt="imágenes top 40"></img>
-                        
 
-                                </div>
-
-                            </motion.div>
+                                </motion.div>
+                            </div>
 
                         )) : "Cargando..."}
 

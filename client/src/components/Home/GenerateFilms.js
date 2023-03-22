@@ -13,15 +13,15 @@ export const GenerateFilms = () => {
     const [results, setResults] = useState(false);
 
     //tokens para acceder a la api:
-    const token1 = 'k_vxrfdfi8'
+    // const token1 = 'k_vxrfdfi8'
     //token cuenta mery21 - mery1234
-    // const token2 = 'k_86200214'
+    const token2 = 'k_86200214'
     // const token3 = 'k_jliqwuub'
     // const token4 = "k_r9znpzwm"
     //token cuenta maria21 - maria1234
     // const token5 = 'k_gugfs9gw'
     //constante para hacer la peticion de los trailers a la api
-    const url = `https://imdb-api.com/en/API/YouTubeTrailer/${token1}`
+    const url = `https://imdb-api.com/en/API/YouTubeTrailer/${token2}`
 
     //Guardamos en el local las respuestas por el usuario
     const answer = JSON.parse(localStorage.getItem('quizAnswers'))
@@ -38,7 +38,7 @@ export const GenerateFilms = () => {
 
         acess = true
 
-        fetch(`https://imdb-api.com/es/API/AdvancedSearch/${token1}/?genres=${genres}`)
+        fetch(`https://imdb-api.com/es/API/AdvancedSearch/${token2}/?genres=${genres}`)
             .then((response) => response.json())
             .then(({ results }) => {
                 filtrarPelis(results);
@@ -98,7 +98,7 @@ export const GenerateFilms = () => {
 
 
     async function filtrarPelis(data) {
-        
+
         let listaFiltrada = filtrarPorDuracion(data)
         listaFiltrada = filtrarPorNota(listaFiltrada)
 
@@ -245,9 +245,22 @@ export const GenerateFilms = () => {
     return (
 
         <div>
-            <NavBar/>
+            <NavBar />
 
-            <p className='pTitleFilm'>PELICULAS RECOMENDADAS</p>
+        
+            <div className='divTrailersYou'>
+
+                {filmUrl.length > 0 ? filmUrl.map((trailer, i) => (
+
+                    <div key={i}>
+
+                        <iframe width="800" height="400" className='iframes' src={`https://www.youtube.com/embed/${trailer.urlDeCadaPeli}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+                    </div>
+
+                )) : ""}
+
+            </div>
 
             <div className='divTotalfilm'>
 
@@ -255,8 +268,7 @@ export const GenerateFilms = () => {
 
                     <div key={i} className="boxFilm">
 
-                        <div><CardFilm urlPoster={film.image} title={film.title} time={film.runtimeStr} rating={film.imDbRating} /></div>
-                        <br />
+                        <CardFilm urlPoster={film.image} sinopsis={film.plot} title={film.title} time={film.runtimeStr} rating={film.imDbRating} votes={film.imDbRatingVotes} />
                         <input value="❤️" readOnly className='btnFav' onClick={() => save(film.title)} />
 
                     </div>
@@ -267,19 +279,7 @@ export const GenerateFilms = () => {
                 </div>}
 
             </div>
-            <div className='divTrailersYou'>
 
-                {filmUrl.length > 0 ? filmUrl.map((trailer, i) => (
-
-                    <div key={i}>
-
-                        <iframe width="500" height="300" className='iframes' src={`https://www.youtube.com/embed/${trailer.urlDeCadaPeli}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-
-                    </div>
-
-                )) : ""}
-
-            </div>
 
             <div className='divReturn'>
                 <button className='butReturn' onClick={() => returnQuestions()}>QUIERO BUSCAR OTRA PELÍCULA</button>
