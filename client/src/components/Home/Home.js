@@ -62,7 +62,7 @@ export const Home = () => {
 
 
       <form className='formRegister' onSubmit={loginUser}>
-        <img src={filmnow3} className="ImgLogoFilm3" />
+        <img src={filmnow3} className="ImgLogoFilm3" alt='logo'/>
         <input className='inputLogin' placeholder='Correo electrónico' type="email" name='email' />
         <input className='inputLogin' placeholder='Contraseña' type="password" name='pass' />
         <input className='inputLogin' type="submit" value="Acceder" />

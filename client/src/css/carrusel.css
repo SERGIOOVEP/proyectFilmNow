@@ -28,7 +28,7 @@
 }
 
 .imageCarrusel {
-    width: 500px;
+    
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -73,13 +73,11 @@
 }
 
 .divCarDiv {
-    background-color: #355776;
+    background: rgb(3,17,36);
+background: linear-gradient(19deg, rgba(3,17,36,1) 0%, rgba(37,41,61,1) 28%, rgba(21,78,127,1) 72%);
 
 }
 
-body {
-    background-color: #355776
-}
 
 .divFooter {
     margin-top: 35px;

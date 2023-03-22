@@ -1,6 +1,10 @@
+
 body {
+    height: 1180px;
     font-family: 'Carter One', cursive;
-    background-color: #355776 !important;
+    background: rgb(3,17,36);
+    background: linear-gradient(19deg, rgba(3,17,36,1) 0%, rgba(37,41,61,1) 28%, rgba(21,78,127,1) 72%);
+    background-repeat: no-repeat;
 }
 
 .formRegister {
@@ -63,6 +67,7 @@ body {
     margin-bottom: 15px;
     font-family: 'Carter One', cursive;
     font-size: 65px;
+    color: black;
 }
 
 .pUserRegister1 {
@@ -76,6 +81,7 @@ body {
     margin-top: 15px;
     margin-bottom: 10px;
     font-family: 'Carter One', cursive;
+    color: black;
 }
 
 .btnInfo {
@@ -133,6 +139,7 @@ body {
 
 .divEmailCon h1 {
     font-size: 40px;
+    color: black;
 }
 
 .ImgLogoFilm{

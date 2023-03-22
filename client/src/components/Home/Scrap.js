@@ -1,4 +1,9 @@
 import React from 'react'
+import { useState } from 'react';
+import NavBar from './NavBar';
+import play from '../../image/play.png'
+
+
 
 export const Scrap = () => {
 
@@ -9,7 +14,7 @@ export const Scrap = () => {
         e.preventDefault();
 
         let loginDates = {
-            email: e.target.email.value,
+            dates: e.target.dates.value,
         }
 
 
@@ -29,8 +34,7 @@ export const Scrap = () => {
             .then((response) => response.json())
             .then((response) => {
                 console.log(response)
-                setDates(response)
-                console.log(response)
+                setDates(response.arrayPelis)
             })
     }
 
@@ -42,15 +46,35 @@ export const Scrap = () => {
         <div>
             <NavBar />
 
+            <form className='formRegister2' onSubmit={scraping}>
 
-            <form className='formRegister' onSubmit={loginUser}>
-
-                <img src={filmnow3} className="ImgLogoFilm3" />
-                <input className='inputLogin' placeholder='Correo electrónico' type="email" name='email' />
-                <input className='inputLogin' placeholder='Contraseña' type="password" name='pass' />
-                <input className='inputLogin' type="submit" value="Acceder" />
+                <input className='inputLogin2' placeholder='Introduce tu peli' type="text" name='dates' />
+                <input className='inputLoginSearch' type="submit" value=" Buscar Película" />
 
             </form>
+            <div className='divScrapFilms'>
+
+                {dates.length > 0 ? dates.map((peli, i) => (
+
+                    <div key={i}>
+
+                        <img src={peli.img} className='imgCard' />
+
+                        <div className='infoCardScrap'>
+
+                            <p className='pTtiScrap'><i>{peli.tit}</i></p>
+                            <p className='pSinScrap'><i>{peli.sin}</i></p>
+                            <p className='pPltScrap'>{peli.plt}<img src={play}/></p>
+                    
+
+                        </div>
+
+
+                    </div>
+
+                )) : ""}
+
+            </div>
 
         </div>
     )
